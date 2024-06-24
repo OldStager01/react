@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      Redus-Toolkit with React
+      <h1 className='text-4xl text-white'>Redux-Toolkit with React</h1>
+      <h1 className='text-3xl text-white mt-5'>Todo-List</h1>
       <AddTodo/>
       <Todos/>
     </>
