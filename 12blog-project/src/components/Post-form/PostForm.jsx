@@ -6,12 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { Input, Button, RTE, Select } from "../";
 
 function PostForm({ post }) {
-  console.log(post);
   const { register, handleSubmit, getValues, setValue, control, watch } =
     useForm();
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-  console.log("userData", userData);
   const submit = async (data) => {
     if (post) {
       const file = data.image[0]

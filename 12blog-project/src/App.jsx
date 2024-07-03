@@ -26,6 +26,7 @@ function App() {
         setLoading(false);
       });
   }, []);
+
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-white">
       <div className="w-full block">

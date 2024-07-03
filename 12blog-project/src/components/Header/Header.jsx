@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, LogoutBtn, Logo } from "../index";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Header() {
   const isAuthenticated = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        document.title = "Home - Mega Blog";
+        break;
+      case "/login":
+        document.title = "Login - Mega Blog";
+        break;
+      case "/signup":
+        document.title = "Signup - Mega Blog";
+        break;
+      case "/add-post":
+        document.title = "Add Post - Mega Blog";
+        break;
+      default:
+        document.title = "Mega Blog";
+        break;
+    }
+  }, [location]);
   const navItems = [
     {
       name: "Home",
